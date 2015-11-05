@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'haml'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -25,6 +26,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+group :development do
+  gem 'letter_opener'
+  gem 'guard-rails', require: false
+  gem 'guard-rspec', require: false
+  gem 'guard-cucumber'
+  gem 'guard-zeus'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -36,7 +44,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '~> 5.0.0'
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'pry', '~> 0.10.1'
+  gem 'pry-nav', '~> 0.2.4'
+  gem 'pry-stack_explorer'
+
+
+  gem 'factory_girl_rails', '~> 4.5.0'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -48,3 +64,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+end
