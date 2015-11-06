@@ -31,8 +31,9 @@
                               <i class="icon-home"></i> Overview </a>
                       </li>
                       <li>
-                          <a href="page_user_profile_1_account.html">
-                              <i class="icon-settings"></i> Account Settings </a>
+                          <%= link_to edit_user_path(current_user.to_param) do %>
+                              <i class="icon-settings"></i>Account Setting
+                          <% end -%>
                       </li>
                       <li>
                           <a href="page_user_profile_1_help.html">

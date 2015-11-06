@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/edit'
+
   # get 'dashboard/show'
 
   devise_for :users
