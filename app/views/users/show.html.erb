@@ -9,12 +9,13 @@
           <div class="portlet light profile-sidebar-portlet ">
               <!-- SIDEBAR USERPIC -->
               <div class="profile-userpic">
-                  <img src="<%= image_path 'metronic/pages/media/profile/profile_user.jpg' %>" class="img-responsive" alt=""> </div>
+                <%=image_tag current_user.avatar_url, class: 'img-responsive' %>
+              </div>
               <!-- END SIDEBAR USERPIC -->
               <!-- SIDEBAR USER TITLE -->
               <div class="profile-usertitle">
-                  <div class="profile-usertitle-name"> Marcus Doe </div>
-                  <div class="profile-usertitle-job"> Developer </div>
+                  <div class="profile-usertitle-name"> <%= "#{current_user.name.presence || 'No Name'}" %> </div>
+                  <div class="profile-usertitle-job"> <%= "#{current_user.position.presence || 'Undefined'}" %> </div>
               </div>
               <!-- END SIDEBAR USER TITLE -->
               <!-- SIDEBAR BUTTONS -->

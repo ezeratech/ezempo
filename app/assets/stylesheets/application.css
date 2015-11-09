@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require metronic
- *= require_tree .
+ *= require dashboard
+ *= require users
  *= require_self
  */

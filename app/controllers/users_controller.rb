@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def user_params
     # used for update create, not for show
-    params.require(:user).permit(:email, :password, :contact_number, :date_of_birth, :about, :interests, :position, :avatar )
+    params.require(:user).permit(:email, :password, :contact_number, :date_of_birth, :about, :interests, :position, :avatar, :remove_avatar )
   end
 
 end

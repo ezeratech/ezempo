@@ -12,6 +12,7 @@
 //= require metronic/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js
 //= require metronic/global/plugins/jquery.sparkline.min.js
 //= require metronic/global/plugins/gmaps/gmaps.min.js
+//= require metronic/global/plugins/icheck/icheck.min.js
 // END PAGE LEVEL PLUGINS
 // BEGIN THEME GLOBAL SCRIPTS
 //= require metronic/global/scripts/app.min.js

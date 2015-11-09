@@ -17,76 +17,24 @@
                         <li>
                             <a href="#tab_1_3" data-toggle="tab">Change Password</a>
                         </li>
-                        <li>
+                       <!--  <li>
                             <a href="#tab_1_4" data-toggle="tab">Privacy Settings</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="portlet-body">
                     <div class="tab-content">
                         <!-- PERSONAL INFO TAB -->
-                        <div class="tab-pane active" id="tab_1_1">
-                            <%= bootstrap_form_for(@user) do |f| %>
-                                <%= f.text_field :name, class: 'form-control', placeholder: "Name" %>
-                                <%= f.text_field :email, class: 'form-control', placeholder: "employee@ezeratech.com" %>
-                                <%= f.text_field :contact_number, class: 'form-control', placeholder: "010-1234567" %>
-                                <%= f.text_field :date_of_birth, class: 'form-control', placeholder: "31 August 1957" %>
-                                <%= f.text_area :about, class: 'form-control', placeholder: "We are EzeraTech Nerd!!!" %>
-                                <%= f.text_field :interests, class: 'form-control', placeholder: "Hiking, Eating, Sleeping, etc." %>
-                                <%= f.text_field :position, class: 'form-control', placeholder: "Junior Developer" %>
-                                <%= f.submit 'Save Changes', class: 'btn green'%>
-                                <%= link_to 'Cancel', user_path(@user), class: 'btn default'%>
-                            <% end -%>
-                        </div>
+                        <%= render partial: 'users/form_tabs/personal_info' %>
                         <!-- END PERSONAL INFO TAB -->
                         <!-- CHANGE AVATAR TAB -->
-                        <div class="tab-pane" id="tab_1_2">
-                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                          <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> 
-                        </div>
-                        <div>
-                            <%= bootstrap_form_for(@user) do |f| %>
-                              <span class="btn default btn-file">
-                                <%= f.file_field :avatar,hide_label: true, class: "fileinput fileinput-new" %>
-                                <%= link_to 'Remove', '#', "data-dismiss": 'fileinput', class: "btn default fileinput-exists" %>
-                              </span>
-                              <%= %>
-                            <% end -%>
-                            <form action="#" role="form">
-                                <div class="form-group">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        
-                                            <span class="btn default btn-file">
-                                                <input type="file" name="..."> </span>
-                                            <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="margin-top-10">
-                                    <a href="javascript:;" class="btn green"> Submit </a>
-                                    <a href="javascript:;" class="btn default"> Cancel </a>
-                                </div>
-                            </form>
+                        <div id="tab_1_2" class="tab-pane">
+                            <%= render partial: 'users/form_tabs/avatar' %>
                         </div>
                         <!-- END CHANGE AVATAR TAB -->
                         <!-- CHANGE PASSWORD TAB -->
-                        <div class="tab-pane" id="tab_1_3">
-                            <form action="#">
-                                <div class="form-group">
-                                    <label class="control-label">Current Password</label>
-                                    <input type="password" class="form-control" /> </div>
-                                <div class="form-group">
-                                    <label class="control-label">New Password</label>
-                                    <input type="password" class="form-control" /> </div>
-                                <div class="form-group">
-                                    <label class="control-label">Re-type New Password</label>
-                                    <input type="password" class="form-control" /> </div>
-                                <div class="margin-top-10">
-                                    <a href="javascript:;" class="btn green"> Change Password </a>
-                                    <a href="javascript:;" class="btn default"> Cancel </a>
-                                </div>
-                            </form>
-                        </div>
+                        <%= render partial: 'users/form_tabs/change_password' %>
+                        
                         <!-- END CHANGE PASSWORD TAB -->
                         <!-- PRIVACY SETTINGS TAB -->
                         <div class="tab-pane" id="tab_1_4">
